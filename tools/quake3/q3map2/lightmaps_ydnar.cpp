@@ -251,7 +251,6 @@ int ImportLightmapsMain( Args& args ){
 	}
 
 	/* write the bsp */
-	Sys_Printf( "writing %s\n", source );
 	WriteBSPFile( source );
 
 	/* return to sender */
@@ -3316,8 +3315,8 @@ void StoreSurfaceLightmaps( bool fastAllocate, bool storeForReal ){
 
 				/* store it */
 				//%	Sys_Printf( "Emitting: %s (%d", csi->shader, strlen( csi->shader ) );
-				int cont = bspShaders[ ds->shaderNum ].contentFlags;
-				int surf = bspShaders[ ds->shaderNum ].surfaceFlags;
+				const int cont = bspShaders[ ds->shaderNum ].contentFlags;
+				const int surf = bspShaders[ ds->shaderNum ].surfaceFlags;
 				ds->shaderNum = EmitShader( csi->shader, &cont, &surf );
 				//%	Sys_Printf( ")\n" );
 			}
@@ -3336,17 +3335,17 @@ void StoreSurfaceLightmaps( bool fastAllocate, bool storeForReal ){
 
 				/* store it */
 				//%	Sys_Printf( "Emitting: %s (%d", csi->shader, strlen( csi->shader ) );
-				int cont = bspShaders[ ds->shaderNum ].contentFlags;
-				int surf = bspShaders[ ds->shaderNum ].surfaceFlags;
+				const int cont = bspShaders[ ds->shaderNum ].contentFlags;
+				const int surf = bspShaders[ ds->shaderNum ].surfaceFlags;
 				ds->shaderNum = EmitShader( csi->shader, &cont, &surf );
 				//%	Sys_Printf( ")\n" );
 			}
 
 			/* use the normal plain-jane shader */
 			else{
-				int cont = bspShaders[ ds->shaderNum ].contentFlags;
-			int surf = bspShaders[ ds->shaderNum ].surfaceFlags;
-			ds->shaderNum = EmitShader( info->si->shader, &cont, &surf );
+				const int cont = bspShaders[ ds->shaderNum ].contentFlags;
+				const int surf = bspShaders[ ds->shaderNum ].surfaceFlags;
+				ds->shaderNum = EmitShader( info->si->shader, &cont, &surf );
 			}
 		}
 
