@@ -37,6 +37,11 @@
 
 #include <algorithm>
 #include <QTimer>
+#ifdef _WIN32
+#include <windows.h> //for Sleep
+#else
+#include <unistd.h> //for sleep
+#endif
 
 #include "commandlib.h"
 #include "string/string.h"
@@ -585,7 +590,15 @@ bool CWatchBSP::SetupListening(){
 #endif
 	globalOutputStream() << "Setting up\n";
 	Net_Setup();
-	m_pListenSocket = Net_ListenSocket( 39000 );
+	for (int i = 0; i < 3; i++) {
+		m_pListenSocket = Net_ListenSocket( 39000 );
+		if (m_pListenSocket) break;
+		#ifdef _WIN32
+		Sleep(1000);
+		#else
+		sleep(1);
+		#endif
+	}
 	if ( m_pListenSocket == NULL ) {
 		return false;
 	}
