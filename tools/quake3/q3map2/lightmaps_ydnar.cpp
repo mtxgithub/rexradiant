@@ -2070,7 +2070,7 @@ static void FindOutLightmaps( rawLightmap_t *lm, bool fastAllocate ){
 		}
 
 		/* if this is a style-using lightmap, it must be exported */
-		if ( lightmapNum > 0 && g_game->load != LoadRBSPFile ) {
+		if ( lightmapNum > 0 && g_game->load != LoadRBSPFile && strcmp(g_game->arg, "nexuiz") && strcmp(g_game->arg, "rexuiz") ) {
 			olm->extLightmapNum = 0;
 		}
 
@@ -3323,7 +3323,7 @@ void StoreSurfaceLightmaps( bool fastAllocate, bool storeForReal ){
 
 			/* devise a custom shader for this surface (fixme: make this work with light styles) */
 			else if ( olm != NULL && lm != NULL && !externalLightmaps &&
-			          ( olm->customWidth != g_game->lightmapSize || olm->customHeight != g_game->lightmapSize ) ) {
+			          ( olm->customWidth != g_game->lightmapSize || olm->customHeight != g_game->lightmapSize ) && strcmp(g_game->arg, "nexuiz") && strcmp(g_game->arg, "rexuiz") ) {
 				/* get output lightmap */
 				olm = &outLightmaps[ lm->outLightmapNums[ 0 ] ];
 
