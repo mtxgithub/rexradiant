@@ -81,5 +81,23 @@ build commands
 <command>[q3map2] -light -deluxe -patchshadows -samples 3 -lightmapsize 512 -bounce 8 -fastbounce -bouncegrid -dirty -dirtscale 2 "[MapFile]"</command>
 <command>[q3map2] -minimap "[MapFile]"</command>
 </build>
+<build name="Q3Map2: (final) + radiosity low brightness">
+<command>[q3map2] -meta -v -samplesize 8 -minsamplesize 4 -mv 1000000 -mi 6000000 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -saveprt &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -exposure 1000 -deluxe -patchshadows -samples 3 -bounce 8 -fastbounce -bouncegrid &quot;[MapFile]&quot;</command>
+<command>[q3map2] -minimap &quot;[MapFile]&quot;</command>
+</build>
+<build name="Q3Map2: (final) + radiosity + fast vis">
+<command>[q3map2] -meta -v -samplesize 8 -minsamplesize 4 -mv 1000000 -mi 6000000 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -saveprt -fast &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -deluxe -patchshadows -samples 3 -lightmapsize 512 -bounce 8 -fastbounce -bouncegrid &quot;[MapFile]&quot;</command>
+<command>[q3map2] -minimap &quot;[MapFile]&quot;</command>
+</build>
+<build name="Q3Map2: (final) + radiosity low brightness + fast vis">
+<command>[q3map2] -meta -v -samplesize 8 -minsamplesize 4 -mv 1000000 -mi 6000000 &quot;[MapFile]&quot;</command>
+<command>[q3map2] -vis -saveprt -fast &quot;[MapFile]&quot;</command>
+<command>[q3map2] -light -exposure 1000 -deluxe -patchshadows -samples 3 -bounce 8 -fastbounce -bouncegrid &quot;[MapFile]&quot;</command>
+<command>[q3map2] -minimap &quot;[MapFile]&quot;</command>
+</build>
 </project>
 

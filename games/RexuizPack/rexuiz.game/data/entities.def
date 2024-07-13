@@ -1021,7 +1021,7 @@ respawntime: time till it respawns (default: 15)
 -------- SPAWNFLAGS --------
 FLOATING: the item will float in air, instead of aligning to the floor by falling
 -------- MODEL FOR RADIANT ONLY - DO NOT SET THIS AS A KEY --------
-model="models/weapons/g_zapper.md3"
+model="models/weapons/g_electro.md3"
 */
 
 /*QUAKED monster_arachna_spawn (1 1 0) (-16 -16 -24) (16 16 32) AUTORESPAWN FREEHUNT
@@ -1895,4 +1895,24 @@ Move target entity to this position
 -------- KEYS --------
 speed: move speed
 target: entity to move
+*/
+
+/*QUAKED func_moveentity (1 1 0.5) (-8 -8 -8) (8 8 8) 
+Move target entity to this position
+-------- KEYS --------
+speed: move speed
+target: entity to move
+*/
+
+/*QUAKED func_weight_button (0 .5 .8) ? 
+-------- KEYS --------
+angle: determines the direction in which the button will move (up = -1, down = -2).
+target: all entities with a matching targetname will be triggered.
+speed: speed of button's displacement (default 100).
+lip: lip remaining at end of move (default 2 units).
+*/
+
+/*QUAKED func_portable (0 .5 0) (-8 -8 -8) (8 8 8) 
+-------- KEYS --------
+model: object model
 */
