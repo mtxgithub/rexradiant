@@ -241,8 +241,13 @@ TOGGLE: toggle mode
 /*QUAKED func_breakable (0 .5 .8) ?
 Breakable object
 -------- KEYS --------
-respawntime: -
-dmg: -
+health: amount of health
+respawntime: respawn time
+dmg: explosion damage
+dmg_radius: explosion radius
+debris: list of debris
+mdl: destruction effect
+noise: destruction noise
 */
 
 /*QUAKED info_location (1 1 0) (-8 -8 -8) (8 8 8) 
@@ -1916,3 +1921,27 @@ lip: lip remaining at end of move (default 2 units).
 -------- KEYS --------
 model: object model
 */
+
+/*QUAKED misc_breakablemodel (0 .5 .8) (-16 -16 -16) (16 16 16)
+Breakable object
+-------- KEYS --------
+model: when used as a point entity, file name of model to load; when used as a brush entity, do not specify that
+frame: animation frame to play (for self-animated zym models)
+skin: number of skin to load (when model is used)
+movetype: way in which it moves: one of 0 = NONE, 1 = ANGLENOCLIP, 2 = ANGLECLIP, 3 = WALK, 4 = STEP, 5 = FLY, 6 = TOSS, 7 = PUSH, 8 = NOCLIP, 9 = FLYMISSILE, 10 = BOUNCE, 11 = BOUNCEMISSILE
+solid: solidity: one of 0 = NOT, 1 = TRIGGER, 2 = BBOX, 3 = SLIDEBOX, 4 = BSP, 5 = CORPSE
+avelocity: vector giving its angular velocity (useful for spinning models)
+scale: scale factor of the model (range: 0.0625 to 15.9375)
+colormap: 1024 + 16 * pantscolor + shirtcolor
+velocity: when movetype isn't 0, initial velocity vector
+angles: initial looking direction
+effects: sum of 1 = BRIGHTFIELD, 4 = BRIGHTLIGHT, 8 = DIMLIGHT, 32 = ADDITIVE, 64 = BLUE, 128 = RED, 512 = FULLBRIGHT, 1024 = FLAME, 2048 = STARDUST, 4096 = NOSHADOW, 8192 = NODEPTHTEST, 32768 = DOUBLESIDED, 8388608 = NOMODELFLAGS (ignores the following coming from a model file), 16777216 = ROCKET, 33554432 = GRENADE, 67108864 = GIB, 134217728 = ROTATE, 268435456 = TRACER, 536870912 = ZOMGIB, 1073741824 = TRACER2, -2147483648 = TRACER3
+health: amount of health
+respawntime: respawn time
+dmg: explosion damage
+dmg_radius: explosion radius
+debris: list of debris
+mdl: destruction effect
+noise: destruction noise
+*/
+
