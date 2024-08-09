@@ -1869,6 +1869,7 @@ inline bool wolfLight;
 inline float extraDist;
 inline bool loMem;
 inline bool noStyles;
+inline bool noLightPVS = false;
 
 //inline int sampleSize = DEFAULT_LIGHTMAP_SAMPLE_SIZE;
 //inline int minSampleSize = DEFAULT_LIGHTMAP_MIN_SAMPLE_SIZE;

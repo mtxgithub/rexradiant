@@ -2785,6 +2785,10 @@ int LightMain( Args& args ){
 				}
 			}
 		}
+		while ( args.takeArg( "-nolightpvs" ) ) {
+			noLightPVS = true;
+			Sys_Printf( "Disabling PVS checks for lights because -nolightpvs passed\n" );
+		}
 		while ( args.takeArg( "-nostyle", "-nostyles" ) ) {
 			noStyles = true;
 			Sys_Printf( "Disabling lightstyles\n" );
@@ -2957,6 +2961,10 @@ int LightMain( Args& args ){
 	SetupBrushes();
 	SetupDirt();
 	SetupFloodLight();
+	if ( entities[ 0 ].read_keyvalue( f, "_nolightpvs" ) && f) {
+		noLightPVS = true;
+		Sys_Printf( "Disabling PVS checks for lights because _nolightpvs is set\n" );
+	}
 	SetupSurfaceLightmaps();
 
 	/* initialize the surface facet tracing */

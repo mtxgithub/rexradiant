@@ -1037,6 +1037,9 @@ void SetupSurfaceLightmaps(){
 							Error( "maxSurfaceClusters exceeded" );
 						}
 						surfaceClusters[ numSurfaceClusters ] = leaf.cluster;
+						if ( noLightPVS ) {
+							surfaceClusters[ numSurfaceClusters ] = 0;
+						}
 						numSurfaceClusters++;
 						info->numSurfaceClusters++;
 					}

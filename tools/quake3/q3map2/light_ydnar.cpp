@@ -384,6 +384,9 @@ static int PointInLeafNum( const Vector3& point ){
 
 static int ClusterForPoint( const Vector3& point ){
 	int leafNum;
+	if ( noLightPVS) {
+		return 0;
+	}
 
 
 	/* get leafNum for point */
@@ -427,6 +430,9 @@ static bool ClusterVisibleToPoint( const Vector3& point, int cluster ){
 int ClusterForPointExt( const Vector3& point, float epsilon ){
 	/* get leaf for point */
 	const int leafNum = PointInLeafNum( point );
+	if ( noLightPVS ) {
+		return 0;
+	}
 	if ( leafNum < 0 ) {
 		return -1;
 	}
@@ -482,6 +488,9 @@ int ClusterForPointExt( const Vector3& point, float epsilon ){
 
 static int ClusterForPointExtFilter( const Vector3& point, float epsilon, int numClusters, int *clusters ){
 	int i, cluster;
+	if ( noLightPVS) {
+		return 0;
+	}
 
 
 	/* get cluster for point */
