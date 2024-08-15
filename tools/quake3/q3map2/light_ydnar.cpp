@@ -428,11 +428,11 @@ static bool ClusterVisibleToPoint( const Vector3& point, int cluster ){
  */
 
 int ClusterForPointExt( const Vector3& point, float epsilon ){
-	/* get leaf for point */
-	const int leafNum = PointInLeafNum( point );
 	if ( noLightPVS ) {
 		return 0;
 	}
+	/* get leaf for point */
+	const int leafNum = PointInLeafNum( point );
 	if ( leafNum < 0 ) {
 		return -1;
 	}
