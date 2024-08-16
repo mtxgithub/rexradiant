@@ -2789,6 +2789,10 @@ int LightMain( Args& args ){
 			noLightPVS = true;
 			Sys_Printf( "Disabling PVS checks for lights because -nolightpvs passed\n" );
 		}
+		while ( args.takeArg( "-lightpvs" ) ) {
+			noLightPVS = false;
+			Sys_Printf( "Enabling PVS checks for lights because -lightpvs passed\n" );
+		}
 		while ( args.takeArg( "-nostyle", "-nostyles" ) ) {
 			noStyles = true;
 			Sys_Printf( "Disabling lightstyles\n" );
@@ -2961,9 +2965,12 @@ int LightMain( Args& args ){
 	SetupBrushes();
 	SetupDirt();
 	SetupFloodLight();
-	if ( entities[ 0 ].read_keyvalue( f, "_nolightpvs" ) && f) {
-		noLightPVS = true;
-		Sys_Printf( "Disabling PVS checks for lights because _nolightpvs is set\n" );
+	if ( entities[ 0 ].read_keyvalue( f, "_nolightpvs" )) {
+		noLightPVS = (((int)f) != 0);
+		if (noLightPVS)
+			Sys_Printf( "Disabling PVS checks for lights because _nolightpvs is not 0\n" );
+		else
+			Sys_Printf( "Enabling PVS checks for lights because _nolightpvs is 0\n" );
 	}
 	SetupSurfaceLightmaps();
 
