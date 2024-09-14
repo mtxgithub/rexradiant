@@ -1945,3 +1945,50 @@ mdl: destruction effect
 noise: destruction noise
 */
 
+/*QUAKED info_jailbreak_jailspawn_red (1 0 0) (-16 -16 -24) (16 16 45)␣
+-------- KEYS --------
+*/
+
+/*QUAKED info_jailbreak_jailspawn_blue (0 0 1) (-16 -16 -24) (16 16 45) 
+-------- KEYS --------
+*/
+
+/*QUAKED func_jailbreak_jail_red (1 0 .5) ?
+Trigger for jail area for red team
+-------- KEYS --------
+*/
+
+/*QUAKED func_jailbreak_jail_blue (0 0 .5) ?
+Trigger for jail area for blue team
+-------- KEYS --------
+*/
+
+/*QUAKED info_jailbreak_jailcamera_red (1 0 0) (-8 -8 -8) (8 8 8) 
+-------- KEYS --------
+angles: direction of camera view
+*/
+
+/*QUAKED info_jailbreak_jailcamera_blue (0 0 1) (-8 -8 -8) (8 8 8) 
+-------- KEYS --------
+angles: direction of camera view
+*/
+
+/*QUAKED info_jailbreak_torturespawn_red (1 0 0) (-8 -8 -8) (8 8 8) 
+-------- KEYS --------
+*/
+
+/*QUAKED info_jailbreak_torturespawn_blue (0 0 1) (-8 -8 -8) (8 8 8) 
+-------- KEYS --------
+*/
+
+/*QUAKED info_jailbreak_controlpoint_red (1 0 0) (-32 -32 -32) (32 32 32) 
+-------- KEYS --------
+*/
+
+/*QUAKED info_jailbreak_controlpoint_blue (0 0 1) (-32 -32 -32) (32 32 32) 
+-------- KEYS --------
+*/
+
+/*QUAKED info_jailbreak_controlpoint_neutral (.5 .5 .5) (-32 -32 -32) (32 32 32) 
+-------- KEYS --------
+*/
